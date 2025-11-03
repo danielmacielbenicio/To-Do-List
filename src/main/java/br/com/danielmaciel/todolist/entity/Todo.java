@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "todo")
-public class Todo {
+
     public class Todo {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,4 +54,3 @@ public class Todo {
             this.prioridade = prioridade;
         }
     }
-}
