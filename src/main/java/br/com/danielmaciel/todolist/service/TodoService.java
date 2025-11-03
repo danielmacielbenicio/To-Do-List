@@ -16,17 +16,22 @@ public class TodoService {
     }
 
     public List<Todo> create(Todo todo) {
-    todoRepository.save(todo);
-    return list();
+        todoRepository.save(todo);
+        return list();
     }
+
     public List<Todo> list() {
-        Sort.by("prioridade").ascending().and(Sort.by("nome").ascending());
+        Sort sort = Sort.by("prioridade").ascending().and(Sort.by("nome").ascending());
+        return todoRepository.findAll(sort);
     }
+
     public List<Todo> update(Todo todo) {
-    return list();
+        todoRepository.save(todo);
+        return list();
     }
+
     public List<Todo> delete(Long id) {
-    todoRepository.deleteById(id);
-    return list();
+        todoRepository.deleteById(id);
+            return list();
+        }
     }
-}
